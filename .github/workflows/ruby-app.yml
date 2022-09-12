@@ -1,4 +1,4 @@
-name: Ruby app
+name: Ruby app with Docker image
 
 on:
   push:
@@ -16,3 +16,16 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.5.x
+        
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag sdthiruma/demo-apps:rv1
+    
+    - name: Docker login
+      env:
+        DOCKER_USER:  ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+ 
+    - name: Push the Docker image to Docker hub
+      run: docker push sdthiruma/demo-apps:rv1
