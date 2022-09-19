@@ -19,7 +19,7 @@ jobs:
         ruby-version: 3.1
     
     - name: install My SQL
-      run: apk update \ && apk add build-base libxml2-dev libxslt-dev mysql-dev \ sqlite-dev ruby-bundler freetds-dev vim
+      run: apt update && apt add build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
     
     - name: Install dependencies
       run: bundle update
