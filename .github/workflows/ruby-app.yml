@@ -23,7 +23,7 @@ jobs:
     #    sudo /etc/init.d/mysql start
       
     - name: install My SQL
-      run: sudo apt-get update && apt-get update build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
+      run: sudo apt-get install mysql-server libmysqlclient-dev
     
     - name: Install dependencies
       run: bundle update
