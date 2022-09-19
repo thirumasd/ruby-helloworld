@@ -13,7 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Ruby 2.5
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+    #  uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.5.x
     
