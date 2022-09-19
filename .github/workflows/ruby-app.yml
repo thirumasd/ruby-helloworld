@@ -18,12 +18,12 @@ jobs:
       with:
         ruby-version: 3.1
         
-    - name: Set up MySQL
-      run: |
-        sudo /etc/init.d/mysql start
+   # - name: Set up MySQL
+   #   run: |
+    #    sudo /etc/init.d/mysql start
       
-  #  - name: install My SQL
-   #   run: apt update && apt add build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
+    - name: install My SQL
+      run: sudo apt-get update && apt-get add build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
     
     - name: Install dependencies
       run: bundle update
