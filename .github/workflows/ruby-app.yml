@@ -17,12 +17,17 @@ jobs:
     #  uses: actions/setup-ruby@v1
       with:
         ruby-version: 3.1
-    
-    - name: install My SQL
-      run: apt update && apt add build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
+        
+    - name: Set up MySQL
+      run: |
+        sudo /etc/init.d/mysql start
+      
+  #  - name: install My SQL
+   #   run: apt update && apt add build-base libxml2-dev libxslt-dev mysql-dev sqlite-dev ruby-bundler freetds-dev vim
     
     - name: Install dependencies
       run: bundle update
+      
     - name: Run tests
       run: bundle exec rake
         
