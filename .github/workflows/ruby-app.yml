@@ -22,8 +22,8 @@ jobs:
    #   run: |
     #    sudo /etc/init.d/mysql start
       
-    - name: install My SQL
-      run: sudo apt-get install mysql-server libmysqlclient-dev
+   # - name: install My SQL
+    #  run: sudo apt-get install mysql-server libmysqlclient-dev
     
     - name: Install dependencies
       run: bundle update
